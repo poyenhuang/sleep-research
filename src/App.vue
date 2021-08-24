@@ -1,8 +1,6 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
   <main>
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <div class="aos-all">
+    <!-- <div class="aos-all">
       <div data-id="1" class="aos-item" data-aos="fadeInUp">1</div>
       <div data-id="2" class="aos-item" data-aos="fadeInUp">2</div>
       <div data-id="3" class="aos-item" data-aos="fadeInUp">3</div>
@@ -27,6 +25,19 @@
       <div data-id="22" class="aos-item" data-aos="fadeInUp">2</div>
       <div data-id="23" class="aos-item" data-aos="fadeInUp">3</div>
       <div data-id="24" class="aos-item" data-aos="fadeInUp">4</div>
+    </div> -->
+    <div class="aos-all">
+      <Logo />
+      <Meditation />
+      <Image />
+      <Overview />
+      <AppWall />
+      <Personas />
+      <Wireframe />
+      <Structure />
+      <Detail />
+      <Colors />
+      <ThankYou />
     </div>
   </main>
 </template>
@@ -34,36 +45,47 @@
 <script>
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import HelloWorld from './components/HelloWorld.vue';
+import Logo from './pages/Logo.vue';
+import Meditation from './pages/Meditation.vue';
+import Image from './pages/Image.vue';
+import Overview from './pages/Overview.vue';
+import AppWall from './pages/AppWall.vue';
+import Personas from './pages/Personas.vue';
+import Wireframe from './pages/Wireframe.vue';
+import Structure from './pages/Structure.vue';
+import Detail from './pages/Detail.vue';
+import Colors from './pages/Colors.vue';
+import ThankYou from './pages/ThankYou.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    Logo,
+    Meditation,
+    Image,
+    Overview,
+    AppWall,
+    Personas,
+    Wireframe,
+    Structure,
+    Detail,
+    Colors,
+    ThankYou,
   },
   created() {
     AOS.init({
       useClassNames: true,
       initClassName: false,
       animatedClassName: 'animated',
+      offset: 100,
+      delay: 500,
+      duration: 1000,
+      easing: 'ease',
     });
   },
 };
 </script>
 
 <style lang="scss">
-
 @import "./assets/scss/main.scss";
-// [data-aos] {
-//   visibility: hidden;
-// }
-// [data-aos].animated {
-//   visibility: visible;
-// }
-
-.aos-all > div {
-  width: 100%;
-  height: 30px;
-  background: blue;
-}
 </style>

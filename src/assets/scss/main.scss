@@ -6,13 +6,30 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  background: #0f0c29;
+  background: linear-gradient(to left, rgba(148, 0, 106, 0.5), rgba(255,0,0,0) 60.71%),
+              linear-gradient(117deg, rgba(#0f0c29, .9), rgba(#302b63, .6), rgba(#24243e, .9),),
+              linear-gradient(188deg, rgba(0,0,255,1), rgba(0,0,255,.3) 100%);
+
+  color: #fff;
+  height: fit-content;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  margin: 150px auto 30px;
 }
 
 .container {
   width: 100%;
-  max-width: 900px;
-  margin: auto;
-  height: 200px;
-  background: #2c3e50;
+  max-width: 960px;
+  min-height: 600px;
+  margin: 0 auto 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }

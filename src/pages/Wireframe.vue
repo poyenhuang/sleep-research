@@ -1,0 +1,25 @@
+<template>
+  <div>
+    <div data-id="61" class="aos-item" data-aos="fadeInUp">
+      <h1>Wireframe</h1>
+    </div>
+    <div data-id="62" class="aos-item" data-aos="fadeInUp">
+      <div class="container"></div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'wireframe',
+};
+</script>
+
+<style scoped>
+.container {
+  height: 480px;
+  width: 100%;
+  background: rgba(120, 120, 120, .5);
+  border-radius: 50px;
+}
+</style>
