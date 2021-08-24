@@ -1,33 +1,7 @@
 <template>
   <main>
-    <!-- <div class="aos-all">
-      <div data-id="1" class="aos-item" data-aos="fadeInUp">1</div>
-      <div data-id="2" class="aos-item" data-aos="fadeInUp">2</div>
-      <div data-id="3" class="aos-item" data-aos="fadeInUp">3</div>
-      <div data-id="4" class="aos-item" data-aos="fadeInUp">4</div>
-      <div data-id="5" class="aos-item" data-aos="fadeInUp">5</div>
-      <div data-id="6" class="aos-item" data-aos="fadeInUp">6</div>
-      <div data-id="7" class="aos-item" data-aos="fadeInUp">7</div>
-      <div data-id="8" class="aos-item" data-aos="fadeInUp">8</div>
-      <div data-id="9" class="aos-item" data-aos="fadeInUp">9</div>
-      <div data-id="10" class="aos-item" data-aos="fadeInUp">10</div>
-      <div data-id="11" class="aos-item" data-aos="fadeInUp">11</div>
-      <div data-id="12" class="aos-item" data-aos="fadeInUp">12</div>
-      <div data-id="13" class="aos-item" data-aos="fadeInUp">13</div>
-      <div data-id="14" class="aos-item" data-aos="fadeInUp">14</div>
-      <div data-id="15" class="aos-item" data-aos="fadeInUp">5</div>
-      <div data-id="16" class="aos-item" data-aos="fadeInUp">6</div>
-      <div data-id="17" class="aos-item" data-aos="fadeInUp">7</div>
-      <div data-id="18" class="aos-item" data-aos="fadeInUp">8</div>
-      <div data-id="19" class="aos-item" data-aos="fadeInUp">9</div>
-      <div data-id="20" class="aos-item" data-aos="fadeInUp">0</div>
-      <div data-id="21" class="aos-item" data-aos="fadeInUp">1</div>
-      <div data-id="22" class="aos-item" data-aos="fadeInUp">2</div>
-      <div data-id="23" class="aos-item" data-aos="fadeInUp">3</div>
-      <div data-id="24" class="aos-item" data-aos="fadeInUp">4</div>
-    </div> -->
     <div class="aos-all">
-      <Logo />
+      <Logo :isScrollDownVisible="!isPlayBtnVisible" />
       <Meditation />
       <Image />
       <Overview />
@@ -39,6 +13,17 @@
       <Colors />
       <ThankYou />
     </div>
+    <!-- <div class="audio-player-wrapper">
+      <audio controls>
+      <source :src="AudioLofi" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio> -->
+    <transition name="fade">
+      <div v-if="isPlayBtnVisible" @click="playAudio()" class="audio-button-wrapper">
+        <div v-if="currentlyPlaying" class="pause"><font-awesome-icon icon="pause" /></div>
+        <div v-else class="play"><font-awesome-icon icon="play" /></div>
+      </div>
+    </transition>
   </main>
 </template>
 
@@ -56,6 +41,7 @@ import Structure from './pages/Structure.vue';
 import Detail from './pages/Detail.vue';
 import Colors from './pages/Colors.vue';
 import ThankYou from './pages/ThankYou.vue';
+import AudioLofi from './assets/audios/lofi-01.mp3';
 
 export default {
   name: 'App',
@@ -72,6 +58,14 @@ export default {
     Colors,
     ThankYou,
   },
+  data() {
+    return {
+      AudioLofi,
+      audio: '',
+      currentlyPlaying: false,
+      isPlayBtnVisible: false,
+    };
+  },
   created() {
     AOS.init({
       useClassNames: true,
@@ -81,11 +75,84 @@ export default {
       delay: 500,
       duration: 1000,
       easing: 'ease',
+      startEvent: 'load',
     });
+  },
+  mounted() {
+    this.audio = new Audio(this.AudioLofi);
+    this.audio.pause();
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeUnmount() {
+    this.audio.removeEventListener('ended', this.handleEnded);
+  },
+  methods: {
+    playAudio() {
+      this.audio.addEventListener('ended', this.handleEnded);
+      if (!this.currentlyPlaying) {
+        this.currentlyPlaying = true;
+        this.audio.play();
+      } else {
+        this.currentlyPlaying = false;
+        this.audio.pause();
+      }
+    },
+    handleEnded() {
+      this.currentlyPlaying = false;
+      this.playAudio();
+    },
+    handleScroll() {
+      if (window.scrollY > 500) {
+        this.isPlayBtnVisible = true;
+      } else {
+        this.isPlayBtnVisible = false;
+      }
+    },
   },
 };
 </script>
 
 <style lang="scss">
 @import "./assets/scss/main.scss";
+
+.audio-button-wrapper {
+  width: 56px;
+  height: 56px;
+  background: #fff;
+  border-radius: 30px;
+  position: fixed;
+  right: 60px;
+  bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  cursor: pointer;
+  opacity: 0.2;
+
+  &:active {
+    transform: scale(0.9)
+  }
+
+  &:hover, &:active {
+    opacity: 0.6;
+  }
+
+  .play {
+    padding-top: 2px;
+    padding-left: 2px;
+  }
+  .pause {
+    padding-top: 2px;
+  }
+
+  transition: all .5s;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
 </style>
