@@ -118,6 +118,7 @@ export default {
 }
 
 .audio-button-wrapper {
+  position: relative;
   width: 56px;
   height: 56px;
   background: #fff;
@@ -131,6 +132,7 @@ export default {
   color: #000;
   cursor: pointer;
   opacity: 0.2;
+  z-index: 10;
 
   &:active {
     transform: scale(0.9)
@@ -154,7 +156,7 @@ export default {
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to {
   opacity: 0;
 }
 
