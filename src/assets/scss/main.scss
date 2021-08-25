@@ -17,6 +17,10 @@ body {
   scroll-behavior: smooth;
 }
 
+main, .aos-all {
+  position: relative;
+}
+
 h1 {
   margin: 150px auto 30px;
 }

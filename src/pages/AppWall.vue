@@ -3,7 +3,7 @@
     <div data-id="41" class="aos-item" data-aos="fadeInUp">
       <h1>因此，我們實現了 { app 名字 } </h1>
     </div>
-    <div data-id="42" class="aos-item display-wrapper" data-aos="fadeInUp"></div>
+    <div data-id="42" class="aos-item display-wrapper" data-aos="zoom-in"></div>
   </div>
 </template>
 

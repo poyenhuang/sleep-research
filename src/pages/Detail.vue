@@ -4,17 +4,17 @@
       <h1>詳細功能</h1>
     </div>
     <div class="container">
-      <div data-id="81" class="aos-item" data-aos="fadeInUp">
+      <div data-id="81" class="aos-item" data-aos="fade-right">
         <div class="detail-wrapper"></div>
       </div>
     </div>
     <div class="container">
-      <div data-id="82" class="aos-item" data-aos="fadeInUp">
+      <div data-id="82" class="aos-item" data-aos="fade-left">
         <div class="detail-wrapper"></div>
       </div>
     </div>
     <div class="container">
-      <div data-id="83" class="aos-item" data-aos="fadeInUp">
+      <div data-id="83" class="aos-item" data-aos="fade-right">
         <div class="detail-wrapper"></div>
       </div>
     </div>
