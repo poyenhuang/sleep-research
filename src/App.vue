@@ -5,10 +5,11 @@
       <Meditation />
       <Image />
       <Overview />
+      <Goal />
       <AppWall />
       <Personas />
-      <Wireframe />
       <Structure />
+      <Wireframe />
       <Detail />
       <Colors />
       <ThankYou />
@@ -30,6 +31,7 @@ import Logo from './pages/Logo.vue';
 import Meditation from './pages/Meditation.vue';
 import Image from './pages/Image.vue';
 import Overview from './pages/Overview.vue';
+import Goal from './pages/Goal.vue';
 import AppWall from './pages/AppWall.vue';
 import Personas from './pages/Personas.vue';
 import Wireframe from './pages/Wireframe.vue';
@@ -46,6 +48,7 @@ export default {
     Meditation,
     Image,
     Overview,
+    Goal,
     AppWall,
     Personas,
     Wireframe,

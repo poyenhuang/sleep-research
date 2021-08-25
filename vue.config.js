@@ -1,3 +1,5 @@
 module.exports = {
-  publicPath: 'sleep-research',
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/sleep-research'
+    : '/',
 };
