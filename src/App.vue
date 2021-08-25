@@ -9,9 +9,11 @@
       <AppWall />
       <Personas />
       <Structure />
+      <Colors />
+      <Story />
+      <!-- story -->
       <Wireframe />
       <Detail />
-      <Colors />
       <ThankYou />
     </div>
     <transition name="fade">
@@ -38,6 +40,7 @@ import Wireframe from './pages/Wireframe.vue';
 import Structure from './pages/Structure.vue';
 import Detail from './pages/Detail.vue';
 import Colors from './pages/Colors.vue';
+import Story from './pages/Story.vue';
 import ThankYou from './pages/ThankYou.vue';
 import AudioLofi from './assets/audios/lofi-01.mp3';
 
@@ -55,6 +58,7 @@ export default {
     Structure,
     Detail,
     Colors,
+    Story,
     ThankYou,
   },
   data() {

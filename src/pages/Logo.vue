@@ -1,7 +1,7 @@
 <template>
   <div data-id="1" class="aos-item container logo-container" data-aos="fadeInUp">
-    <img alt="ogo" src="@/assets/logo.png">
-    <h1>Logo page</h1>
+    <img alt="ogo" src="@/assets/dream-garden.png">
+    <h1>夢境花園</h1>
     <transition name="fade">
       <div
         v-show="isScrollDownVisible"
