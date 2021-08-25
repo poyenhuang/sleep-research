@@ -3,7 +3,7 @@
     <div data-id="71" class="aos-item" data-aos="fadeInUp">
       <h1>資訊架構</h1>
     </div>
-    <div data-id="72" class="aos-item" data-aos="fadeInUp">
+    <div data-id="72" class="aos-item" data-aos="zoom-in">
       <div class="container"></div>
     </div>
   </div>

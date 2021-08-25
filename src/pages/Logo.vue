@@ -1,6 +1,6 @@
 <template>
   <div data-id="1" class="aos-item container logo-container" data-aos="fadeInUp">
-    <img alt="Vue logo" src="@/assets/logo.png">
+    <img alt="ogo" src="@/assets/logo.png">
     <h1>Logo page</h1>
     <transition name="fade">
       <div
@@ -41,6 +41,7 @@ export default {
 <style scoped>
 img {
   margin-top: 120px;
+  width: 240px;
 }
 
 h1 {

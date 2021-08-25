@@ -3,7 +3,7 @@
     <div data-id="61" class="aos-item" data-aos="fadeInUp" data-aos-offset="0">
       <h1>Wireframe</h1>
     </div>
-    <div data-id="62" class="aos-item" data-aos="fadeInUp" data-aos-offset="0">
+    <div data-id="62" class="aos-item" data-aos="zoom-in" data-aos-offset="0">
       <div class="container"></div>
     </div>
   </div>

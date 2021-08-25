@@ -1,6 +1,10 @@
 @import "variables";
 @import "mixins";
 
+html, body {
+  overscroll-behavior: none;
+}
+
 body {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -17,8 +21,16 @@ body {
   scroll-behavior: smooth;
 }
 
+main, .aos-all {
+  position: relative;
+}
+
 h1 {
   margin: 150px auto 30px;
+}
+
+p {
+  font-size: 1.1em;
 }
 
 .container {
