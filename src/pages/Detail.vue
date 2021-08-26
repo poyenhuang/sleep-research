@@ -109,7 +109,8 @@ h1 {
       font-size: 20px;
       font-weight: 600;
       color: #F6593E;
-      margin-bottom: 4px;
+      margin-bottom: 12px;
+      margin-left: 4px;
     }
 
     .title {
@@ -120,6 +121,8 @@ h1 {
     p {
       font-size: 24px;
       margin: 0;
+      line-height: 30px;
+      margin-left: 4px;
     }
   }
 
