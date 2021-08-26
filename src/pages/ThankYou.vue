@@ -12,4 +12,7 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  padding: 200px 0;
+}
 </style>

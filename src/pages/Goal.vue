@@ -1,5 +1,5 @@
 <template>
-  <div class="goal-wrapper">
+  <div class="goal-wrapper container">
     <div data-id="92" class="aos-item" data-aos="fadeInUp">
       <h1>Goals</h1>
     </div>
