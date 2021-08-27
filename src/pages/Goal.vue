@@ -20,7 +20,8 @@ export default {
 
 <style scoped lang="scss">
 .goal-wrapper {
-  width: 800px;
+  width: 90%;
+  max-width: 900px;
   height: 600px;
   margin: 0 auto 400px;
   display: flex;
@@ -30,6 +31,10 @@ export default {
 
   h1 {
     margin-bottom: 60px;
+  }
+
+  h3 {
+    font-size: 1.6em;
   }
 }
 </style>

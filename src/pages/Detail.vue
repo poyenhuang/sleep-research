@@ -39,24 +39,10 @@
         </div>
       </div>
     </div>
-    <!-- <div class="container">
-      <div class="detail-container">
-        <div data-id="841" class="image-wrapper aos-item" data-aos="fade-left">
-          <img :src="ImgPreviewRight" alt="" srcset="">
-        </div>
-        <div data-id="842" class="detail-wrapper aos-item" data-aos="fade-right">
-          <div class="label">FEATURE #4</div>
-          <div class="title">睡眠儀式</div>
-          <p>使用者藉由建立睡眠儀式排程，梳理今天的情緒，來提醒大腦切換到休眠模式</p>
-        </div>
-      </div>
-    </div> -->
   </div>
 </template>
 
 <script>
-import ImgPreviewLeft from '../assets/images/app-preview-left.png';
-import ImgPreviewRight from '../assets/images/app-preview-right.png';
 import ImgMeditation from '../assets/images/meditation.png';
 import ImgReport from '../assets/images/report.png';
 import ImgFlowers from '../assets/images/flowers.png';
@@ -65,8 +51,6 @@ export default {
   name: 'features',
   data() {
     return {
-      ImgPreviewLeft,
-      ImgPreviewRight,
       ImgMeditation,
       ImgReport,
       ImgFlowers,
@@ -94,8 +78,7 @@ h1 {
 }
 
 .detail-container {
-  width: 100%;
-  height: 500px;
+  width: 95%;
   border-radius: 50px;
   color: #fff;
   display: flex;
@@ -134,12 +117,12 @@ h1 {
   }
 
   .image-wrapper {
-    width: 45%;
+    width: 52%;
 
     img {
       width: 100%;
       height: auto;
-      margin-top: 80px;
+      margin-top: 120px;
     }
   }
 }

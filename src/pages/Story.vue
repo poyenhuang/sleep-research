@@ -1,7 +1,7 @@
 <template>
   <div>
     <div data-id="99" class="aos-item" data-aos="fadeInUp">
-      <h1>Story</h1>
+      <h1>故事理念</h1>
     </div>
     <div data-id="991" class="aos-item container" data-aos="fadeInUp">
       <h3>在草藥莊園裡，睡眠是巫師們的頭等大事，</h3>
@@ -20,6 +20,10 @@ export default {
 <style scoped>
 h1 {
   margin-top: 400px;
+}
+
+h3 {
+  font-size: 1.6em;
 }
 
 .container {

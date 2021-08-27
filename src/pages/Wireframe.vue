@@ -20,7 +20,6 @@ export default {
 <style scoped>
 .container {
   width: 100%;
-  background: rgba(120, 120, 120, .5);
   margin-bottom: 400px;
   border-radius: 10px;
 }
