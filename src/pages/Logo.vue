@@ -30,7 +30,7 @@ export default {
   methods: {
     handleScrollDown() {
       window.scrollTo({
-        top: 660,
+        top: 800,
         behavior: 'smooth',
       });
     },

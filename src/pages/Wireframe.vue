@@ -21,5 +21,6 @@ export default {
   width: 100%;
   background: rgba(120, 120, 120, .5);
   border-radius: 50px;
+  margin-bottom: 400px;
 }
 </style>
