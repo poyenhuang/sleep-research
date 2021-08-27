@@ -1,13 +1,14 @@
 <template>
   <main>
     <div class="aos-all">
-      <Logo :isScrollDownVisible="!isPlayBtnVisible" id="logo" @click="handleScrollDown" />
+      <Logo :isScrollDownVisible="!isPlayBtnVisible" id="logo"/>
       <Meditation id="meditation" />
       <ImagePage id="image" />
       <Overview id="overview" />
       <Goal id="goal" />
       <AppWall id="appwall" />
       <Personas id="personas" />
+      <Mindmap id="mindmap" />
       <Story id="story" />
       <Structure id="structure" />
       <Colors id="color" />
@@ -50,6 +51,7 @@ import Structure from './pages/Structure.vue';
 import Detail from './pages/Detail.vue';
 import Colors from './pages/Colors.vue';
 import Story from './pages/Story.vue';
+import Mindmap from './pages/Mindmap.vue';
 import ThankYou from './pages/ThankYou.vue';
 import AudioLofi from './assets/audios/lofi-01.mp3';
 
@@ -60,6 +62,7 @@ const scrollList = [
   'goal',
   'appwall',
   'personas',
+  'mindmap',
   'story',
   'structure',
   'color',
@@ -83,6 +86,7 @@ export default {
     Detail,
     Colors,
     Story,
+    Mindmap,
     ThankYou,
   },
   data() {
@@ -152,6 +156,7 @@ export default {
         && scrollY > 100;
     },
     offset(name) {
+      console.log(name);
       const el = document.getElementById(name);
       const rect = el.getBoundingClientRect();
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
