@@ -1,6 +1,6 @@
 <template>
   <div data-id="1" class="aos-item container logo-container" data-aos="fadeInUp">
-    <img alt="ogo" src="@/assets/dream-garden.png">
+    <img alt="logo" src="@/assets/dream-garden-02.png">
     <h1>夢境花園</h1>
     <transition name="fade">
       <div

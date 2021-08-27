@@ -4,7 +4,9 @@
       <h1>Wireframes</h1>
     </div>
     <div data-id="62" class="aos-item" data-aos="zoom-in" data-aos-offset="0">
-      <div class="container"></div>
+      <div class="container">
+        <img src="../assets/images/wireframe.png" alt="" srcset="">
+      </div>
     </div>
   </div>
 </template>
@@ -17,10 +19,14 @@ export default {
 
 <style scoped>
 .container {
-  height: 480px;
   width: 100%;
   background: rgba(120, 120, 120, .5);
-  border-radius: 50px;
   margin-bottom: 400px;
+  border-radius: 10px;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 </style>

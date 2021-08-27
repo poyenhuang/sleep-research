@@ -58,8 +58,8 @@
 import ImgPreviewLeft from '../assets/images/app-preview-left.png';
 import ImgPreviewRight from '../assets/images/app-preview-right.png';
 import ImgMeditation from '../assets/images/meditation.png';
-import ImgReport from '../assets/images/report-right.png';
-import ImgFlowers from '../assets/images/flowers-left.png';
+import ImgReport from '../assets/images/report.png';
+import ImgFlowers from '../assets/images/flowers.png';
 
 export default {
   name: 'features',

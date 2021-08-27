@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import ImgColor from '../assets/images/colors.png';
+import ImgColor from '../assets/images/colors@2x.png';
 
 export default {
   name: 'colors',
