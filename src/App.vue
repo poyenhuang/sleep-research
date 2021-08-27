@@ -143,7 +143,7 @@ export default {
     handleScroll() {
       this.checkPosition(window.scrollY);
 
-      if (window.scrollY > 500 && window.scrollY < 10000) {
+      if (window.scrollY > 500 && window.scrollY < 14000) {
         this.isPlayBtnVisible = true;
       } else {
         this.isPlayBtnVisible = false;
@@ -271,7 +271,7 @@ export default {
 .stars {
   z-index: 0;
   background: transparent url('https://image.ibb.co/mjnygo/stars.png') repeat top center;
-  height: 10500px;
+  height: 14500px;
   opacity: 0.5;
 }
 

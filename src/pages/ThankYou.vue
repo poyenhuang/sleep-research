@@ -24,7 +24,7 @@ h1 {
     font-size: 3em;
 }
 p {
-    margin-top: 100px;
+    margin-top: 150px;
     letter-spacing: 3px;
 }
 </style>
