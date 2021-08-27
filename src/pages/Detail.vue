@@ -78,6 +78,7 @@ h1 {
 }
 .container {
   margin-top: 0;
+  margin-bottom: 60px;
 
   &:nth-child(odd) {
     .detail-container {

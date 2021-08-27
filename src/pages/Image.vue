@@ -1,11 +1,6 @@
 <template>
-  <div class="container" ref="image">
+  <div class="container">
     <h1 data-id="11" class="aos-item" data-aos="fadeInUp">想像一下有什麼事會讓你失眠？</h1>
-    <!-- <div v-if="timer >= 5000" class="aos-item">aaa</div>
-    <div v-if="timer >= 7000" class="aos-item">bbb</div>
-    <div v-if="timer >= 900" class="aos-item">ccc</div>
-    <div v-if="timer >= 10000" class="aos-item">ddd</div>
-    <div v-if="timer >= 1100" class="aos-item">eee</div> -->
   </div>
 </template>
 
@@ -18,12 +13,6 @@ export default {
       timerInterval: null,
       isCounting: false,
     };
-  },
-  created() {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-  beforeUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
   },
   methods: {
     handleScroll() {

@@ -1,25 +1,34 @@
 <template>
   <main>
     <div class="aos-all">
-      <Logo :isScrollDownVisible="!isPlayBtnVisible" />
-      <Meditation />
-      <Image />
-      <Overview />
-      <Goal />
-      <AppWall />
-      <Personas />
-      <Structure />
-      <Colors />
-      <Story />
-      <!-- story -->
-      <Wireframe />
-      <Detail />
-      <ThankYou />
+      <Logo :isScrollDownVisible="!isPlayBtnVisible" id="logo" @click="handleScrollDown" />
+      <Meditation id="meditation" />
+      <ImagePage id="image" />
+      <Overview id="overview" />
+      <Goal id="goal" />
+      <AppWall id="appwall" />
+      <Personas id="personas" />
+      <Story id="story" />
+      <Structure id="structure" />
+      <Colors id="color" />
+      <Wireframe id="wireframe" />
+      <Detail id="detail" />
+      <ThankYou id="thankyou" />
     </div>
     <transition name="fade">
       <div v-if="isPlayBtnVisible" @click="playAudio()" class="audio-button-wrapper">
         <div v-if="currentlyPlaying" class="pause"><font-awesome-icon icon="pause" /></div>
         <div v-else class="play"><font-awesome-icon icon="play" /></div>
+      </div>
+    </transition>
+    <transition name="fade">
+      <div v-show="isScrollIndicatorVisible" class="hooper-indicators">
+        <div
+          v-for="(item, index) in positionList"
+          :key="item"
+          :class="['hooper-indicator', { 'is-active': index === currentPositionIndex }]"
+          @click="handleScrollDown(index)"
+        />
       </div>
     </transition>
     <div class="stars"></div>
@@ -31,7 +40,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Logo from './pages/Logo.vue';
 import Meditation from './pages/Meditation.vue';
-import Image from './pages/Image.vue';
+import ImagePage from './pages/Image.vue';
 import Overview from './pages/Overview.vue';
 import Goal from './pages/Goal.vue';
 import AppWall from './pages/AppWall.vue';
@@ -44,12 +53,27 @@ import Story from './pages/Story.vue';
 import ThankYou from './pages/ThankYou.vue';
 import AudioLofi from './assets/audios/lofi-01.mp3';
 
+const scrollList = [
+  'meditation',
+  'image',
+  'overview',
+  'goal',
+  'appwall',
+  'personas',
+  'story',
+  'structure',
+  'color',
+  'wireframe',
+  'detail',
+  'thankyou',
+];
+
 export default {
   name: 'App',
   components: {
     Logo,
     Meditation,
-    Image,
+    ImagePage,
     Overview,
     Goal,
     AppWall,
@@ -67,6 +91,9 @@ export default {
       audio: '',
       currentlyPlaying: false,
       isPlayBtnVisible: false,
+      positionList: [],
+      currentPositionIndex: -1,
+      isScrollIndicatorVisible: false,
     };
   },
   created() {
@@ -82,11 +109,16 @@ export default {
     });
   },
   mounted() {
+    setTimeout(() => {
+      this.positionList = scrollList.map((section) => this.offset(section));
+    }, 3000);
+
     this.audio = new Audio(this.AudioLofi);
     this.audio.pause();
     window.addEventListener('scroll', this.handleScroll);
   },
   beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
     this.audio.removeEventListener('ended', this.handleEnded);
   },
   methods: {
@@ -105,11 +137,31 @@ export default {
       this.playAudio();
     },
     handleScroll() {
+      this.checkPosition(window.scrollY);
+
       if (window.scrollY > 500 && window.scrollY < 10000) {
         this.isPlayBtnVisible = true;
       } else {
         this.isPlayBtnVisible = false;
       }
+    },
+    checkPosition(scrollY) {
+      const passList = this.positionList.filter((position) => scrollY > position - 50);
+      this.currentPositionIndex = passList.length - 1;
+      this.isScrollIndicatorVisible = this.currentPositionIndex > -1
+        && scrollY > 100;
+    },
+    offset(name) {
+      const el = document.getElementById(name);
+      const rect = el.getBoundingClientRect();
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      return rect.top + scrollTop;
+    },
+    handleScrollDown(index) {
+      window.scrollTo({
+        top: this.positionList[index] - 40,
+        behavior: 'smooth',
+      });
     },
   },
 };
@@ -162,6 +214,42 @@ export default {
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
+}
+
+.hooper-indicators {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  top: 35%;
+  right: 24px;
+  z-index: 10;
+  cursor: pointer;
+
+  .hooper-indicator {
+    position: relative;
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    margin: 4px;
+    background: #d8d8d8;
+    cursor: pointer;
+    flex: 0 0 auto;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+    z-index: 10;
+    opacity: 0.5;
+
+    &:hover {
+      transform: scale(1.8);
+      opacity: 1;
+    }
+
+    &.is-active {
+      background: #F6593E;
+      opacity: 0.8;
+    }
+  }
 }
 
 .stars {
