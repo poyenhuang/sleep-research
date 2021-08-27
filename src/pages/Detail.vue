@@ -18,7 +18,7 @@
     <div class="container">
       <div class="detail-container">
         <div data-id="821" class="image-wrapper aos-item" data-aos="fade-left">
-          <img :src="ImgPreviewLeft" alt="" srcset="">
+          <img :src="ImgReport" alt="" srcset="">
         </div>
         <div data-id="822" class="detail-wrapper aos-item" data-aos="fade-right">
           <div class="label">FEATURE #2</div>
@@ -30,7 +30,7 @@
     <div class="container">
       <div class="detail-container">
         <div data-id="831" class="image-wrapper aos-item" data-aos="fade-right">
-          <img :src="ImgPreviewRight" alt="" srcset="">
+          <img :src="ImgFlowers" alt="" srcset="">
         </div>
         <div data-id="832" class="detail-wrapper aos-item" data-aos="fade-left">
           <div class="label">FEATURE #3</div>
@@ -58,6 +58,8 @@
 import ImgPreviewLeft from '../assets/images/app-preview-left.png';
 import ImgPreviewRight from '../assets/images/app-preview-right.png';
 import ImgMeditation from '../assets/images/meditation.png';
+import ImgReport from '../assets/images/report-right.png';
+import ImgFlowers from '../assets/images/flowers-left.png';
 
 export default {
   name: 'features',
@@ -66,6 +68,8 @@ export default {
       ImgPreviewLeft,
       ImgPreviewRight,
       ImgMeditation,
+      ImgReport,
+      ImgFlowers,
     };
   },
 };

@@ -266,9 +266,6 @@ export default {
   right: 0;
   width: 100%;
   height: 100%;
-}
-
-.stars {
   z-index: 0;
   background: transparent url('https://image.ibb.co/mjnygo/stars.png') repeat top center;
   height: 14500px;
