@@ -18,7 +18,14 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  margin-top: 400px;
+}
+
 .container {
   justify-content: start;
+  height: 360px;
+  min-height: 360px;
+  margin-bottom: 400px;
 }
 </style>

@@ -6,7 +6,7 @@
     <div class="container">
       <div class="detail-container">
         <div data-id="811" class="image-wrapper aos-item" data-aos="fade-right">
-          <img :src="ImgPreviewLeft" alt="" srcset="">
+          <img :src="ImgMeditation" alt="" srcset="">
         </div>
         <div data-id="812" class="detail-wrapper aos-item" data-aos="fade-left">
           <div class="label">FEATURE #1</div>
@@ -18,7 +18,7 @@
     <div class="container">
       <div class="detail-container">
         <div data-id="821" class="image-wrapper aos-item" data-aos="fade-left">
-          <img :src="ImgPreviewRight" alt="" srcset="">
+          <img :src="ImgPreviewLeft" alt="" srcset="">
         </div>
         <div data-id="822" class="detail-wrapper aos-item" data-aos="fade-right">
           <div class="label">FEATURE #2</div>
@@ -30,7 +30,7 @@
     <div class="container">
       <div class="detail-container">
         <div data-id="831" class="image-wrapper aos-item" data-aos="fade-right">
-          <img :src="ImgPreviewLeft" alt="" srcset="">
+          <img :src="ImgPreviewRight" alt="" srcset="">
         </div>
         <div data-id="832" class="detail-wrapper aos-item" data-aos="fade-left">
           <div class="label">FEATURE #3</div>
@@ -57,6 +57,7 @@
 <script>
 import ImgPreviewLeft from '../assets/images/app-preview-left.png';
 import ImgPreviewRight from '../assets/images/app-preview-right.png';
+import ImgMeditation from '../assets/images/meditation.png';
 
 export default {
   name: 'features',
@@ -64,6 +65,7 @@ export default {
     return {
       ImgPreviewLeft,
       ImgPreviewRight,
+      ImgMeditation,
     };
   },
 };
@@ -80,7 +82,7 @@ h1 {
   margin-top: 0;
   margin-bottom: 60px;
 
-  &:nth-child(odd) {
+  &:nth-child(even) {
     .detail-container {
       flex-direction: row-reverse;
     }

@@ -1,25 +1,35 @@
 <template>
   <div>
-    <div data-id="71" class="aos-item" data-aos="fadeInUp">
-      <h1>資訊架構</h1>
-    </div>
-    <div data-id="72" class="aos-item" data-aos="zoom-in">
-      <div class="container"></div>
+    <div data-id="72" class="aos-item container" data-aos="zoom-in">
+      <img :src="ImgStructure" alt="" srcset="">
     </div>
   </div>
 </template>
 
 <script>
+import ImgStructure from '../assets/images/structure.png';
+
 export default {
   name: 'structure',
+  data() {
+    return {
+      ImgStructure,
+    };
+  },
 };
 </script>
 
 <style scoped>
-.container {
-  height: 480px;
+img {
   width: 100%;
-  background: rgba(120, 120, 120, .5);
+  max-width: 800px;
+}
+
+.container {
+  height: 240px;
+  min-height: 240px;
+  width: 100%;
   border-radius: 50px;
+  margin-bottom: 400px;
 }
 </style>
