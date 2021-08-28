@@ -156,7 +156,6 @@ export default {
         && scrollY > 100;
     },
     offset(name) {
-      console.log(name);
       const el = document.getElementById(name);
       const rect = el.getBoundingClientRect();
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;

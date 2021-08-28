@@ -3,7 +3,9 @@
     <div data-id="41" class="aos-item" data-aos="fadeInUp">
       <h1>因此，我們實現了 <span class="important">夢境花園</span> </h1>
     </div>
-    <div data-id="42" class="aos-item display-wrapper" data-aos="zoom-in"></div>
+    <div data-id="42" class="aos-item display-wrapper" data-aos="fade-up" data-aos-duration="1200">
+      <img src="../assets/images/preview.png" alt="" srcset="">
+    </div>
   </div>
 </template>
 
@@ -19,7 +21,9 @@ h1 {
 }
 .display-wrapper {
   width: 100%;
-  height: 560px;
-  background: rgba(120, 120, 120, .5);
+}
+img {
+  margin-top: 30px;
+  width: 100%;
 }
 </style>

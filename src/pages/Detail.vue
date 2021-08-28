@@ -30,12 +30,24 @@
     <div class="container">
       <div class="detail-container">
         <div data-id="831" class="image-wrapper aos-item" data-aos="fade-right">
-          <img :src="ImgFlowers" alt="" srcset="">
+          <img :src="ImgMedicine" alt="" srcset="">
         </div>
         <div data-id="832" class="detail-wrapper aos-item" data-aos="fade-left">
           <div class="label">FEATURE #3</div>
           <div class="title">藥草莊園</div>
-          <p>透過睡眠表現來決定獲得的禮物，除了圖鑑收集外，也帶入真實世界助眠的香氛配方，讓好好睡覺這件事有更多的期待</p>
+          <p>透過睡眠表現來決定草藥調製與種植的成功率，帶入真實世界助眠的香氛配方，讓好好睡覺這件事有更多的期待</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="detail-container">
+        <div data-id="841" class="image-wrapper aos-item" data-aos="fade-left">
+          <img :src="ImgFlowers" alt="" srcset="">
+        </div>
+        <div data-id="842" class="detail-wrapper aos-item" data-aos="fade-right">
+          <div class="label">FEATURE #4</div>
+          <div class="title">草藥圖鑑</div>
+          <p>用於夢境花園裡的花草魔藥圖鑑，為使用者增添圖鑑收集的樂趣</p>
         </div>
       </div>
     </div>
@@ -45,6 +57,7 @@
 <script>
 import ImgMeditation from '../assets/images/meditation.png';
 import ImgReport from '../assets/images/report.png';
+import ImgMedicine from '../assets/images/medicine.png';
 import ImgFlowers from '../assets/images/flowers.png';
 
 export default {
@@ -54,6 +67,7 @@ export default {
       ImgMeditation,
       ImgReport,
       ImgFlowers,
+      ImgMedicine,
     };
   },
 };
@@ -67,6 +81,7 @@ h1 {
   width: 100%;
 }
 .container {
+  max-width: 1300;
   margin-top: 0;
   margin-bottom: 60px;
 
@@ -87,7 +102,7 @@ h1 {
   margin-top: 30px;
 
   .detail-wrapper {
-    width: 40%;
+    width: 30%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -111,13 +126,13 @@ h1 {
     p {
       font-size: 24px;
       margin: 0;
-      line-height: 30px;
+      line-height: 36px;
       margin-left: 4px;
     }
   }
 
   .image-wrapper {
-    width: 52%;
+    width: 62%;
 
     img {
       width: 100%;
